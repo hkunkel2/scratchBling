@@ -23,11 +23,11 @@ class ItemsController < ApplicationController
 
   def show
     set_item
-    render json: @item
+    render json: @item, status: :ok
   end
 
   def index
-    render json: Item.all
+    render json: Item.all, status: :ok
   end
 
   def destroy
