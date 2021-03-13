@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class Api::V1::ItemsController < Api::ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   def create

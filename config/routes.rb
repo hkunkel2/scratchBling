@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'items/create'
   get 'items/update'
   get 'items/show'
@@ -7,6 +8,12 @@ Rails.application.routes.draw do
   get 'items/destroy'
   get 'items/edit'
   get 'items/new'
-resources :items
+  
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      post 'authenticate', to: 'authentication#authenticate'
+      resources :items
+    end
+  end
 
 end
