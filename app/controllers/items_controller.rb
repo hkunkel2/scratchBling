@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def index
+    render json: Item.all
   end
 
   def destroy
