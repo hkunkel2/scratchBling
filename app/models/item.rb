@@ -4,6 +4,4 @@ validates :description, presence: true
 validates :size, presence: true
 validates :price, presence: true
 
-serialize :size, Array
-
 end
